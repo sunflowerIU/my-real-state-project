@@ -6,7 +6,6 @@ const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const mongoSanitize = require('express-mongo-sanitize')
 const rateLimit = require('express-rate-limit')
-const xss = require('xss-clean')
 const path = require('path')
 const cors = require('cors')
 const compression = require('compression')
@@ -53,7 +52,6 @@ const limiter = rateLimit({
 app.use('/api', limiter) //now it will work for every url starts with api
 
 //use xss to prevent cross site scripting
-app.use(xss())
 app.disable('x-powered-by'); //remove x-powered-by-express
 app.use(cors()) //apply cors
 app.use(compression())
