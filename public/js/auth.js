@@ -49,7 +49,6 @@ signupForm.addEventListener('submit', async function (e) {
             return showAlert('error', 'Password and password confirm are not same')
         }
         //
-        console.log('aaaa')
         const res = await axios({
             withCredentials: true,
             method: 'POST',
@@ -75,6 +74,8 @@ signupForm.addEventListener('submit', async function (e) {
 
     } catch (err) {
         showAlert('error', err.response.data.message)
+        document.querySelector('.signup').textContent = 'Sign Up'
+
         // console.log(err.response.data.message)
     }
 
