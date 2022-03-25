@@ -23,6 +23,13 @@ app.use(express.static(path.join(__dirname,'public')))
 app.set('view engine', 'pug')
 app.set('views', path.join('views'))
 
+
+const dotenv = require('dotenv')
+//config dotenv
+dotenv.config({
+    path: './config.env'
+})
+
 //to parse body from request
 app.use(express.json({
     limit: '10kb' //express will throw error if there is more than 10kb in body
