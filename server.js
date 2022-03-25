@@ -30,7 +30,7 @@ dbConnection.on('open',()=>{
 
 //starting app
 const port = process.env.PORT || 1000
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log('server has started in port ' + port)
 })
 
@@ -52,3 +52,5 @@ process.on('SIGTERM',()=>{
         console.log('Process terminated😑😐')
     })
 })
+
+

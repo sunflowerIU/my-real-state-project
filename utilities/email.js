@@ -30,12 +30,12 @@ module.exports =  class Email {
             });
         } else { //use gmail as transporter in production
             return nodemailer.createTransport({
-                service: "gmail",
+                service: 'SendGrid',
                 auth: {
-                    user: this.hostEmail,
-                    pass: this.hostEmailPassword
+                    user: process.env.SENDGRID_USERNAME,
+                    pass: process.env.SENDGRID_PASSWORD,
                 }
-            });
+            })
         }
     }
 
@@ -44,7 +44,7 @@ module.exports =  class Email {
         // send mail with defined transport object
         const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`,{
             name:this.user.name,
-            url:this.url,
+            url:this.url || '',
             subject,
             senderName:this.senderName || '',
             contactedFrom:this.from || '',
