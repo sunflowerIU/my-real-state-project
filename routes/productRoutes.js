@@ -1,7 +1,7 @@
-const productController = require('./../controllers/productController')
-const authController = require('./../controllers/authController')
 const express = require('express')
 const router = express()
+const productController = require('./../controllers/productController')
+const authController = require('./../controllers/authController')
 const upload = require('./../controllers/productController').upload
 const AppError = require('./../utilities/appError')
 
