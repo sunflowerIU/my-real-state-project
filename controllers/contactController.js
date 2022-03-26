@@ -9,7 +9,7 @@ exports.contactController = catchAsync(async(req,res,next)=>{
     const {name,email,subject,message} = req.body;
     // console.log(name,email,subject,message)
     
-    await new Email('','',email,'amittamang421@gmail.com',subject,message,name).contactEmail()
+    await new Email('','',email,'amittamang421@gmail.com',subject,message,name,'gmail').contactEmail()
 
     res.status(200).json({
         status:"success",

@@ -328,3 +328,13 @@ exports.isLoggedIn = catchAsync(async(req,res,next)=>{
 
     return next()
 })
+
+
+
+
+//10. making one middleware function for auth so that we cannot get auth page when logged in
+exports.showErrorAuthPage =(req,res,next)=>{
+    if(!req.user) return next()
+
+    return next(new AppError('Please log out first',400))
+}

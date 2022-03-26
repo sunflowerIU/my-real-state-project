@@ -37,6 +37,7 @@ form.addEventListener('submit', async function (e) {
         setTimeout(location.assign('/'),6000)
 
     } catch (err) {
+        submit.value = 'Send'
         console.log(err)
     }
 })

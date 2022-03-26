@@ -87,7 +87,7 @@ const createForm = document.querySelector('.create-property')
 if (createForm) {
   createForm.addEventListener('submit', async function (e) {
     e.preventDefault()
-
+    document.querySelector('.submit-btn').value = 'Submitting...'
 
     const formData = new FormData()
     formData.append('name', document.querySelector('.property-name').value)
@@ -140,6 +140,8 @@ if (createForm) {
         setTimeout(window.location.reload(true),3000)
       }
     } catch (err) {
+      document.querySelector('.submit-btn').value = 'Submit'
+
       showAlert('error', err.response.data.message)
     }
 

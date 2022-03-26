@@ -73,7 +73,7 @@ const POLICY =
   "font-src 'self' https: data:;" +
   "frame-ancestors 'self';" +
   "connect-src 'self' http://127.0.0.1:1999 https: https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js;" +
-  "img-src http://127.0.0.1:1999 'self' blob: data:;" +
+  "img-src http://127.0.0.1:1999 'self' https://images.vexels.com blob: data:;" +
   "object-src 'none';" +
   "script-src https: cdn.jsdelivr.net cdnjs.cloudflare.com trused-cdn.com 'self' 'nonce-hehe' blob: ;" +
   "script-src-attr 'none';" +

@@ -73,7 +73,7 @@ signupForm.addEventListener('submit', async function (e) {
         }
 
     } catch (err) {
-        showAlert('error', err.response.data.message)
+        showAlert('error', err.response.data.message || 'failed to send email, goto login')
         document.querySelector('.signup').textContent = 'Sign Up'
 
         // console.log(err.response.data.message)

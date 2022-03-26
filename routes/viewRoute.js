@@ -15,7 +15,7 @@ router.get('/product/:slug',authController.isLoggedIn,viewController.getProduct)
 router.get('/contact-us',authController.isLoggedIn,viewController.contactUs)
 
 //4. signup
-router.get('/auth',viewController.auth)
+router.get('/auth',authController.isLoggedIn,authController.showErrorAuthPage,viewController.auth)
 
 //5. create Property
 router.get('/create-property',authController.protect,viewController.createProperty)
@@ -39,6 +39,7 @@ router.all('*',(req,res,next)=>{
     })
 }
 )
+
 
 
 
